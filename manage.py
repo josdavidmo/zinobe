@@ -3,6 +3,7 @@ import sys
 
 
 def test():
+    """ run unittest """
     import unittest
     from users import test
     suite = unittest.TestLoader().loadTestsFromModule(test)
@@ -10,6 +11,7 @@ def test():
 
 
 def run():
+    """ run server """
     from users import urls
     if os.environ.get("REQUEST_METHOD", ""):
         from wsgiref.handlers import BaseCGIHandler
@@ -33,6 +35,7 @@ def run():
 
 
 def create():
+    """ create database """
     from users.model import Base
     from dbconfig import engine
     print "Creating data base..."
@@ -44,6 +47,7 @@ if __name__ == "__main__":
     if 'create' in sys.argv:
         create()
     if 'run' in sys.argv:
+        test()
         run()
     if 'test' in sys.argv:
         test()

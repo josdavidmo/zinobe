@@ -10,13 +10,48 @@ from users.model import User
 
 
 def sign_in_user_get(environ, start_response):
+    """
+    Used to render sign in user.
+
+    Renders sign_in.html .
+
+    Parameters
+    ----------
+    start_response : start_response
+        WSGI start_response
+    environ : environ
+        WSGI python environ
+
+    Returns
+    -------
+    list
+        sign in view
+
+    """
     usr_session = environ['beaker.session']
     usr_session.delete()
     return render(start_response, 'sign_in.html')
 
 
 def sign_in_user_post(environ, start_response):
-    import hashlib
+    """
+    Used to manage sign in user request.
+
+    Manage sign_in.html request.
+
+    Parameters
+    ----------
+    start_response : start_response
+        WSGI start_response
+    environ : environ
+        WSGI python environ
+
+    Returns
+    -------
+    list
+        sign in view
+
+    """
     request = POST(environ)
     Session = sessionmaker()
     Session.configure(bind=engine)
@@ -37,10 +72,46 @@ def sign_in_user_post(environ, start_response):
 
 
 def sign_up_user_get(environ, start_response):
+    """
+    Used to render sign up user.
+
+    Renders sign_up.html .
+
+    Parameters
+    ----------
+    start_response : start_response
+        WSGI start_response
+    environ : environ
+        WSGI python environ
+
+    Returns
+    -------
+    list
+        sign up view
+
+    """
     return render(start_response, 'sign_up.html')
 
 
 def sign_up_user_post(environ, start_response):
+    """
+    Used to manage sign up user request.
+
+    Manage sign_up.html request.
+
+    Parameters
+    ----------
+    start_response : start_response
+        WSGI start_response
+    environ : environ
+        WSGI python environ
+
+    Returns
+    -------
+    list
+        sign up view
+
+    """
     request = POST(environ)
 
     fields = set(field for field in User.__dict__)
@@ -60,6 +131,24 @@ def sign_up_user_post(environ, start_response):
 
 
 def list_get(environ, start_response):
+    """
+    Used to render list user.
+
+    Renders list.html .
+
+    Parameters
+    ----------
+    start_response : start_response
+        WSGI start_response
+    environ : environ
+        WSGI python environ
+
+    Returns
+    -------
+    list
+        list view
+
+    """
     usr_session = environ['beaker.session']
     if usr_session.get('usr_id'):
         Session = sessionmaker()
@@ -73,6 +162,24 @@ def list_get(environ, start_response):
 
 
 def list_post(environ, start_response):
+    """
+    Used to manage list user request.
+
+    Manage list.html request.
+
+    Parameters
+    ----------
+    start_response : start_response
+        WSGI start_response
+    environ : environ
+        WSGI python environ
+
+    Returns
+    -------
+    list
+        list view
+
+    """
     usr_session = environ['beaker.session']
     if usr_session.get('usr_id'):
         Session = sessionmaker()
