@@ -36,6 +36,29 @@ def sign_in_user_post(environ, start_response):
         return redirect(start_response, '/')
 
 
+def sign_up_user_get(environ, start_response):
+    return render(start_response, 'sign_up.html')
+
+
+def sign_up_user_post(environ, start_response):
+    request = POST(environ)
+
+    fields = set(field for field in User.__dict__)
+    dct = {key: value for key, value in request.items() if key in fields}
+    user = User(**dct)
+    user.password = hashlib.sha256(user.password.encode()).hexdigest()
+
+    try:
+        Session = sessionmaker()
+        Session.configure(bind=engine)
+        session = Session()
+        session.add(user)
+        session.commit()
+        return redirect(start_response, '/')
+    except Exception as e:
+        return redirect(start_response, '/')
+
+
 def list_get(environ, start_response):
     usr_session = environ['beaker.session']
     if usr_session.get('usr_id'):
