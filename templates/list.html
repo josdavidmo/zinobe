@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Search User</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"></link>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+  <script>
+  $(document).ready(function() {
+    $.fn.dataTable.ext.errMode = 'throw';
+    $('#users_table').DataTable({
+      "processing": true,
+      "serverSide": true,
+      "ajax": {
+          "url":'/list/',
+          "type": "POST"
+      }
+    });
+  });
+
+  </script>
+</head>
+<body>
+  <div class="container signin">
+    <p>Welcome {{ usr.name }}! <a href="/">Sign Out</a>.</p>
+    <p>Here you can find about users information. </p>
+  </div>
+  <table id="users_table" class="display">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Country</th>
+          </tr>
+      </thead>
+  </table>
+
+
+</body>
+
+</html>
