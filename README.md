@@ -1,6 +1,20 @@
 # Zinobe
 
-Technical Test Zinobe
+Prueba Técnica Zinobe
+
+## Arquitectura de la Aplicación
+
+El framework desarrollado utliza el archivo manage.py para orquestar la ejecución del servidos, las pruebas unitarias y la base de datos. El proyecto esta compuesto por dos carpetas principales:
+
+1. La carpeta core, contiene utilidades y funciones principales usadas por el framework.
+
+2. La carpeta users, contiene los archivos:
+
+  * model.py -> contiene la clase usuario.
+  * urls.py -> mapeo de urls a vistas de la aplicación.
+  * view.py -> vistas de la aplicación.
+  * test.py -> pruebas unitarias.
+
 
 ## Ambiente de la Aplicación
 
@@ -15,9 +29,7 @@ Considerando los requerimientos presentados y la experiencia previa en proyectos
 -   SQLAlchemy
 -   sqlite
 
-Al igual que los proyectos desarrollados en Django, el framework maneja el archivo manage.py, el cual gestiona la ejecución del servidor, las pruebas unitarias y la base de datos.
-
-## Instalación de la Aplicación
+### Instalación de la Aplicación
 
 Los comandos presentados a continuación corresponden a los ejecutados en ubuntu 16.04. Para instalar la aplicación se debe disponer de git y virtualenv previamente instalado.
 
@@ -30,9 +42,9 @@ Los comandos presentados a continuación corresponden a los ejecutados en ubuntu
 
 El proyecto contiene un bash que ejecuta los comandos descritos anteriormente.
 
-    . bash.sh
+    ./run.sh
 
-## ¿Cómo ejecutar la aplicación?
+### ¿Cómo ejecutar la aplicación?
 
 Ejecutar la aplicación es sencillo, basta con ejecutar el comando:
 
@@ -49,7 +61,7 @@ Inmediatamente en la consola mostrará los siguientes mensajes:
 
 Posteriormente ingresar al navegador a la url localhost:8080
 
-## ¿Cómo crear la base de datos?
+### ¿Cómo crear la base de datos?
 
 Ejecutar el comando:
 
@@ -62,7 +74,7 @@ Inmediatamente en la consola mostrará los siguientes mensajes:
 
 Se creará el archivo zinobe.db donde se gestionan los datos de la aplicación.
 
-## ¿Cómo ejecutar las pruebas?
+### ¿Cómo ejecutar las pruebas?
 
 Ejecutar el comando:
 
