@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt install python-pip
 pip install virtualenv
 git clone https://github.com/josdavidmo/zinobe
 cd "zinobe"
