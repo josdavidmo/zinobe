@@ -26,8 +26,13 @@ Los comandos presentados a continuación corresponden a los ejecutados en ubuntu
     virtualenv env
     source env/bin/activate
     pip install -r requirements.txt
+    python manage.py create
 
-##¿Cómo ejecutar la aplicación?
+El proyecto contiene un bash que ejecuta los comandos descritos anteriormente.
+
+    . bash.sh
+
+## ¿Cómo ejecutar la aplicación?
 
 Ejecutar la aplicación es sencillo, basta con ejecutar el comando:
 
@@ -43,6 +48,35 @@ Inmediatamente en la consola mostrará los siguientes mensajes:
     Serving HTTP on 0.0.0.0 port 8080 ...
 
 Posteriormente ingresar al navegador a la url localhost:8080
+
+## ¿Cómo crear la base de datos?
+
+Ejecutar el comando:
+
+    python manage.py create
+
+Inmediatamente en la consola mostrará los siguientes mensajes:
+
+    Creating data base...
+    Ok
+
+Se creará el archivo zinobe.db donde se gestionan los datos de la aplicación.
+
+## ¿Cómo ejecutar las pruebas?
+
+Ejecutar el comando:
+
+    python manage.py test
+
+Inmediatamente en la consola mostrará los siguientes mensajes:
+
+    ..
+    ----------------------------------------------------------------------
+    Ran 2 tests in 0.375s
+
+    OK
+
+Las pruebas verifican el correcto funcionamiento de la base de datos.
 
 ## Requerimientos
 
