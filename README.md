@@ -4,13 +4,13 @@ Prueba Técnica Zinobe - Desarrollado por José David Moreno Posada
 
 ## Arquitectura de la Aplicación
 
-El framework desarrollado utliza el archivo manage.py para orquestar la ejecución del servidor, las pruebas unitarias y la base de datos. El proyecto esta compuesto por dos carpetas principales:
+El framework desarrollado utiliza el archivo manage.py para orquestar la ejecución del servidor, las pruebas unitarias y la base de datos. El proyecto esta compuesto por dos carpetas principales:
 
 1.  La carpeta core, contiene utilidades y funciones principales usadas por el framework.
 
 2.  La carpeta users, contiene los archivos:
 
--   model.py -> contiene la clase usuario.
+-   model.py -> contiene los modelos de las tablas que se crearán en la Base de Datos, en ese momento sólo se cuenta con el modelo de user.
 -   urls.py -> mapeo de urls a vistas de la aplicación.
 -   view.py -> vistas de la aplicación.
 -   test.py -> pruebas unitarias.
@@ -43,7 +43,7 @@ El proyecto contiene un [bash](https://github.com/josdavidmo/zinobe/blob/master/
 
     . ./run.sh
 
-El archivo [run.sh](https://github.com/josdavidmo/zinobe/blob/master/run.sh) fue utilizado para instalar la aplicación en una máquina usando el servicio EC2 de AWS. Ingresando al sitio <http://34.221.93.12:8080/> se puede ingresar a la aplicación.
+El archivo [run.sh](https://github.com/josdavidmo/zinobe/blob/master/run.sh) fue utilizado para instalar la aplicación en una máquina usando el servicio EC2 de AWS, puede ser ejecutado en cualquier máquina con sistema operativo ubuntu y con el paquete git instalado. Ingresando al sitio <http://34.221.93.12:8080/> se puede visualizar a la aplicación.
 
 ### ¿Cómo ejecutar la aplicación?
 
