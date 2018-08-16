@@ -1,6 +1,6 @@
 # Zinobe
 
-Prueba Técnica Zinobe
+Prueba Técnica Zinobe - Desarrollado por José David Moreno Posada
 
 ## Arquitectura de la Aplicación
 
